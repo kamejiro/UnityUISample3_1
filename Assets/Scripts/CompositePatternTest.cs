@@ -19,10 +19,12 @@ public class CompositePatternTest : MonoBehaviour
         createConsumptionItemFilesTo(this.consumptionItemDirectory);
         //装備アイテムn個を装備アイテムディレクトリに生成
         createEquippedItemFilesTo(this.equippedItemDirectory);
-
-        this.itemDirectory.PrintListLog();
     }
 
+    public void OnClickMenuButton()
+    {
+        this.itemDirectory.PrintListLog();
+    }
 
     //関数定義
     //各ディレクトリの階層構造を準備

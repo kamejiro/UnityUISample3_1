@@ -10,6 +10,7 @@ public class SettingManager : MonoBehaviour
     //参照定義
     public InputField new_name;
     public Slider new_volume;
+    public GameObject menu;
 
     //変数定義
     string user_name;
@@ -17,6 +18,7 @@ public class SettingManager : MonoBehaviour
     public static int livingAreaNum;
     public static string livingArea;
     public static string sex;
+    private bool isShow = false;
 
     void Start()
     {
@@ -55,5 +57,21 @@ public class SettingManager : MonoBehaviour
         PlayerPrefs.SetFloat("volume", volume);
         //ホームシーンへ戻る
         SceneManager.LoadScene("SampleScene");
+    }
+
+    //メニューバー押下時
+    public void OnClickMenu()
+    {
+        Debug.Log("押されてる");
+        if (!isShow)
+        {
+            menu.SetActive(true);
+            isShow = true;
+        }
+        else if (isShow)
+        {
+            menu.SetActive(false);
+            isShow = false;
+        }
     }
 }
